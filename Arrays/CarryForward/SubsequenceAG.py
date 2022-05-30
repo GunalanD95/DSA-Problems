@@ -1,5 +1,3 @@
-A = "ABCGAG"
-
 '''Problem :
 You have given a string A having Uppercase English letters.
 
@@ -8,7 +6,7 @@ You have to find how many times subsequence "AG" is there in the given string.
 NOTE: Return the answer modulo 109 + 7 as the answer can be very large.
 '''
 
-#1-  BruteForce Approach 
+#1)-  BruteForce Approach 
 
 def subsequence(A):
     N = len(A)
@@ -27,9 +25,10 @@ def subsequence(A):
 # Space Complexity: O(1)
 
 
+#############################################################################################################################
 
 
-#2- Optimized Approach -  A = "ABCGAG"
+#2)- Optimized Approach -  A = "ABCGAG"
 
 def subsequence(A):
     N = len(A)
