@@ -6,40 +6,40 @@ least one occurrence of the maximum value of the array and at least one occurren
 
 # 1) - BruteForce Approach
 
-# def ClosetMinMax(A):
-#     N = len(A)
+def ClosetMinMax(A):
+    N = len(A)
 
-#     # first we need to find min and max from the array
-#     maxV = A[0]
-#     minV = A[0]
+    # first we need to find min and max from the array
+    maxV = A[0]
+    minV = A[0]
 
-#     for i in range(0,N):
-#         if maxV < A[i]:
-#             maxV = A[i]
-#         elif minV > A[i]:
-#             minV = A[i]
+    for i in range(0,N):
+        if maxV < A[i]:
+            maxV = A[i]
+        elif minV > A[i]:
+            minV = A[i]
 
-#     ans = N
-#     for i in range(N):
-#         if A[i] == maxV:
-#             for j in range(i+1,N):
-#                 if A[j] == minV:
-#                     length = j-i+1
-#                     print("length:",ans)
-#                     ans = min(ans,length)
-#                     print("length2:",ans)
-#                     break
-#         elif A[i] == minV:
-#             for j in range(i+1,N):
-#                 if A[j] == maxV:
-#                     length = j-i+1
-#                     print("length:",ans)
-#                     ans = min(ans,length)
-#                     print("length2:",ans)
-#                     break
+    ans = N
+    for i in range(N):
+        if A[i] == maxV:
+            for j in range(i+1,N):
+                if A[j] == minV:
+                    length = j-i+1
+                    print("length:",ans)
+                    ans = min(ans,length)
+                    print("length2:",ans)
+                    break
+        elif A[i] == minV:
+            for j in range(i+1,N):
+                if A[j] == maxV:
+                    length = j-i+1
+                    print("length:",ans)
+                    ans = min(ans,length)
+                    print("length2:",ans)
+                    break
 
 
-#     print('Min Length of the subrray:',ans)
+    print('Min Length of the subrray:',ans)
 
 # Time Complexity: O(N^2)
 # Space Complexity: O(1)
