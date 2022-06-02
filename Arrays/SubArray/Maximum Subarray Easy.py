@@ -18,6 +18,15 @@ def MaxSubArray(A):
             max_sum = max(max_sum,sum)
     return max_sum
 
+# Time Complexity: O(N^2)
+# Space Complexity: O(1)
+
+
+
+############################################################################################################################
+
+
+
 
 # 2 - Kadane's Algorithm
 
@@ -37,7 +46,7 @@ def MaxSubArr(A):
 
 
 
-# Time Complexity: O(N^2)
+# Time Complexity: O(N)
 # Space Complexity: O(1)
 
 if __name__ == '__main__':
