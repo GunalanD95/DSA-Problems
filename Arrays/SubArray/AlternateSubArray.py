@@ -34,11 +34,11 @@ def AlternateSubArrayB(A,B):
     res = []
     for i in range(N):                         # Iterate over the array
         s = A[i]                               # s is the current element
-        count = 0                              # init count as 0
+        count = 0                              # initialize count
         for j in range(i,min(i+B,N)):          # Iterate over the subarray of length B
             if s == A[j]:                      # If the element is same as the current element
                 count += 1                     # Increment the count
-            s = 1 - s                          # Flip the element to 1 - s , so that we can check the next element
+            s = 1 - s                          # Flip the element to 1 - s , so that we can check the next element in the subarray
 
         if count == B:                         # If the count is equal to B, then we have found the alternate subarray
             res.append(i+B//2)
