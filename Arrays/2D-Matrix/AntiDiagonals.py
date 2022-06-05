@@ -7,35 +7,33 @@ Give a N * N square matrix A, return an array of its anti-diagonals. Look at the
 
 def diagonal(A):
     N = len(A)
-    rows = ((2 * N-1) * N ) // N
-    cols = N
+    rows = ((2 * N-1) * N ) // N                                     # row count
+    cols = len(A[0])                                                 # col count
 
     # Pythonic Way of creating 2D Array
     # arr = [[0]*cols]*rows
     # print(arr)
 
-    arr = [[0 for i in range(cols)] for j in range(rows)]
-    print(arr)
-
-    
-    for j in range(N):
-        x  = 0 # row
-        y =  j  # col
-        c = 0
-        while x < N and y >= 0:
-            c += 1
-            print("c: ", c)
-            print(A[x][y],"-","x:y",x,y)
+    arr = [[0 for i in range(cols)] for j in range(rows)]           # Pythonic Way of creating 2D Array
+    for j in range(N):                                              # looping from top-left to bottom-right
+        x  = 0  # row                                               # x = 0
+        y =  j  # col                                               # y = j
+        while x < N and y >= 0:                               
+            arr[x+y][y] = A[y][x]                                   # x + y = row, y = col               
             x += 1
             y -= 1
-            
-    for k in range(1,N):
+
+   
+    for k in range(1,N):                                            # looping from top-right to bottom-left
         x  = k     # row
         y =  N -1  # col
         while x < N and y >= 0:
-            print(A[x][y],"-","x:y",x,y)
+            arr[x+y][y-k] = A[y][x]                                 # x + y = row, y - k = col , y -k will 
             x += 1
             y -= 1
+    
+
+    return(arr)
 
 
 

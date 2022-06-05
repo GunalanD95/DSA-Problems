@@ -9,6 +9,8 @@ Y from the corresponding elements of X. Thus if Z = [z[i][j]] = X - Y, then [z[i
 # 1) Brute Force Approach using nested for loop
 
 def SubMat(A,B):
+
+
     N = len(A)
     res = A
     for row in range(N):
@@ -16,13 +18,6 @@ def SubMat(A,B):
             res[row][col] = A[row][col] - B[row][col]
     print(res)
             
-
-
-
-
-
-
-
 
 
 
