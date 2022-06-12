@@ -4,6 +4,7 @@ Given two binary strings, return their sum (also a binary string).
 '''
 
 def AddBinaryStrings(A,B):
+    # converting to ints
     A = list(A)
     B = list(B)
 
@@ -13,6 +14,8 @@ def AddBinaryStrings(A,B):
     N = len(A)
     M = len(B)
 
+
+    # if one of the strings is longer than the other, we need to pad the shorter one with zeros
     if N !=  M:
         if N > M:
             while M < N:
@@ -25,24 +28,29 @@ def AddBinaryStrings(A,B):
                 N = len(A)
                 M = len(B)
 
-    print("A:",A,"B:",B)
+
+    # adding the binary strings together
 
     s = len(A) - 1
     res = list(range(N))
     car = 0
     while s >= 0:
-        # use mod and div to get the carry and calculate the sum
+        # using mod and div to get the carry and calculate the sum
         sum = A[s] + B[s] + car
-        print("sum:",sum)
         res[s] = (sum) % 2
         car = (sum) // 2
 
         s -=  1
 
+    # if the carry is 1, we need to add it to the result
+
     if car == 1:
         res.insert(0,1)
-    print("res:",res)
+
+
+    # converting the result to a string
     return "".join(str(i) for i in res)
+
 
 
 
