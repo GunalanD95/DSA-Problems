@@ -57,6 +57,14 @@ def MaxNonNeg(A):
 
     return(A[s1:e1+1])
 
+# Write Down the Algorithm for the above solution :
+# 0) Initialize st_indx , end_indx  = 0 - temp vars , 0 and s1 , e1 = 0 , 0  for result  
+# 1) Find the first positive element in the array.
+# 2) Find the last positive element in the array.
+# 3) Find the length of the subarray.
+# 4) If the length of the subarray is greater than the max length, then update the max length.
+# 5) If the length of the subarray is equal to the max length, then check if the start index is less than the start index of the max length subarray. If yes, then update the max length subarray.
+
 
 
 

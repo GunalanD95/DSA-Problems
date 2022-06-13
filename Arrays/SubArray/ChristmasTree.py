@@ -22,7 +22,7 @@ def MinTreeSum(A,B):
         # find left most min element for mid
         s  = mid - 1                                  # s is the index of the left most min element of the array
         left  = sys.maxsize
-        while  s >= 0:                                # loop left to find the left most min element of the array
+        while  s >= 0:                                # loop left to find the left most min element of the array < A[mid]
             if A[mid] > A[s]:
                 left = min(left,B[s])                                 
             s -= 1
@@ -32,7 +32,7 @@ def MinTreeSum(A,B):
         e = mid + 1                                  # e is the index of the right most max element of the array
         right = sys.maxsize 
         while e < N:                                 
-            if A[mid] < A[e]:                        # loop right to find the right most max element of the array
+            if A[mid] < A[e]:                        # loop right to find the right most min element of the array > A[mid]
                 right = min(right,B[e])
                 
             e += 1

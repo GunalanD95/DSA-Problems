@@ -20,34 +20,25 @@ def CountLongSubArrayB(A):
             if A[i] == '1':
                 no_1s += 1
 
-        if N <= 2:                                           # if the array has less than 2 elements, return the number of 1s in the array
-            if N == 1:
-                if A[st_indx] == '1':
-                    res += 1
-            if N == 2:
-                if A[end_indx] == '1':
-                    res += 1
-            res_len = max(res,res_len)
-        else:
-            while end_indx <= N-1:                          # loop through the array to find the longest consecutive 1s
-                length = 0 
-                o_s = 0                                     # o_s is the number of 0's in the current subarray
-                e1 = st_indx                                # e1 is the index of the last 1 in the current subarray
-                length  = 0
-                while e1 <= N-1:            
-                    if A[e1] != '1':                        # if the element is 0, increment the number of 0's in the current subarray
-                        if o_s < 1:                         # if the number of 0's is less than 1, increment the length of the current subarray
-                            o_s += 1
-                            length += 1
-                        else:
-                            break
-                    elif A[e1] == '1':                      # if the element is 1, increment the length of the current subarray
+        while end_indx <= N-1:                          # loop through the array to find the longest consecutive 1s
+            length = 0 
+            o_s = 0                                     # o_s is the number of 0's in the current subarray
+            e1 = st_indx                                # e1 is the index of the last 1 in the current subarray
+            length  = 0
+            while e1 <= N-1:            
+                if A[e1] != '1':                        # if the element is 0, increment the number of 0's in the current subarray
+                    if o_s < 1:                         # if the number of 0's is less than 1, increment the length of the current subarray
+                        o_s += 1
                         length += 1
-                    e1 += 1
-                res_len = max(length,res_len)               # find the longest consecutive 1s in the array
+                    else:
+                        break
+                elif A[e1] == '1':                      # if the element is 1, increment the length of the current subarray
+                    length += 1
+                e1 += 1
+            res_len = max(length,res_len)               # find the longest consecutive 1s in the array
 
-                st_indx  += 1
-                end_indx += 1
+            st_indx  += 1
+            end_indx += 1
 
         if res_len > no_1s:                                 # if the longest consecutive 1s is greater than the number of 1s in the array, return no_1s
             return(no_1s)

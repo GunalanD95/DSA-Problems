@@ -45,19 +45,6 @@ def PrintDia(A):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     A = 5
     print(PrintDia(A))
