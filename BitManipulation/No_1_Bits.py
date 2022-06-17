@@ -8,21 +8,28 @@ def Noof1bits(A):
 
     # implement divmod function to get the quotient and remainder
 
-    def divmod(a, b):
-        return a // b, a % b
+    def checkith(n,i):
+        mask = 1 << i
+        if n & mask > 0:
+            return 1
+        else:
+            return 0
+        
+    c = 0
+    for i in range(32):
+        val = checkith(A,i)
+        if val == 1:
+            c += 1
+            
+    return c
 
-    no_of_1s = 0
 
-    while A  > 0:
-        A , rem = divmod(A, 2)
-        if rem == 1:
-            no_of_1s += 1
-
-    return no_of_1s
-
-
+# Approach :
+# 1. Use the mask to check if the bit is 1 or 0
+# 2. If the bit is 1, increment the count
+# 3. Return the count
 
 
 if __name__ == '__main__':
-    A = 44
+    A = 11
     print(Noof1bits(A))

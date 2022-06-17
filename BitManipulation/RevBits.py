@@ -61,5 +61,5 @@ def Revbits(A):
 
 
 if __name__ == '__main__':
-    A = 22
+    A = 25
     print(Revbits(A))
