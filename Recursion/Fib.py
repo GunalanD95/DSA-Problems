@@ -12,8 +12,6 @@ def Fib(N):
 
 
 
-
-
 if __name__ == '__main__':
     N = 3
     print(Fib(N))

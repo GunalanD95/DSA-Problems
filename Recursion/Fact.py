@@ -6,12 +6,6 @@ def Fac(N):
     return N * Fac(N-1)
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
     N = 5
     print(Fac(N))
