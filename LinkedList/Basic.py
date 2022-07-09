@@ -45,14 +45,37 @@ class LL:
             c += 1
         newNode.next = temp.next
         temp.next = newNode
-            
+        
+    def delete(self,pos):
+        temp = self.head
+        if pos == 0:
+            newhead = temp.next
+            self.head = newhead
+            print('delete head')
+        else:
+            c = 0 
+            while c < pos-1:
+                print("del",temp.data,c)
+                temp = temp.next
+                c += 1
+            print("del before",temp.data)
+            newval = temp.next.next
+            temp.next = newval
+        
+    def printll(self):
+        temp = self.head
+        while temp:
+            print("printing--",temp.data)
+            temp = temp.next
             
 ll = LL()
 print("LinkedList",ll)
 ll.insertfront(5)
 ll.insertfront(10)
-print("head",ll.head.data)
+ll.insertfront(100)
 ll.insertend(25)
 ll.insertend(35)
-print(ll.insertpos(2,20))
-print(ll.length())
+ll.insertpos(2,20)
+print("before deletion",ll.printll())
+print("delete print",ll.delete(3))
+print(ll.printll())
