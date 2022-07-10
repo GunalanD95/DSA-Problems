@@ -24,6 +24,7 @@ class stack:
         return self.stk
 
 
+
 s = stack()
 s.push(1)
 s.push(2)
