@@ -213,6 +213,7 @@ w = BST(1)
 w.root.left = Node(2)
 
 
+
 w.root.right = Node(3)
 w.root.right.left = Node(6)
 w.root.right.right = Node(7)
@@ -222,7 +223,7 @@ w.root.right.right = Node(7)
 
 # print("recursive preorder",t.preorder(t.root))
 # print("inorder",t.inorder(t.root))
-# print("postorder",t.postorder(t.root))
+print("postorder",t.postorder(t.root))
 
 # print("iter preorder",t.iterpreorder())
 # print("iter inorder",t.iterinorder())
