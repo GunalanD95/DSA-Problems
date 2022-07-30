@@ -1,6 +1,4 @@
 
-from operator import invert
-from turtle import right
 
 
 class Node:
@@ -86,6 +84,38 @@ class BST:
 
 
 
+
+    def binaryTreePaths(self,root):
+        self.stack = []
+        self.cur = []
+
+        def dfs(node):
+            if not node:
+                return []
+            
+            
+            self.cur.append(node.val)
+            if self.cur not in self.stack:
+                self.stack.append(self.cur)
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+
+            print("cur 1",self.cur)
+            print("main 1",self.stack)
+
+            self.cur.pop()
+
+            
+
+
+
+
+        dfs(self.root)
+
+
+
+
         
 
 
@@ -144,4 +174,7 @@ bt.root.right.right = Node(7)
 # print(bt.preorder(bt.root))
 
 
-print("node path",bt.nodepath(5))
+# print("node path",bt.nodepath(5))
+
+
+print("bt paths",bt.binaryTreePaths(bt.root))
