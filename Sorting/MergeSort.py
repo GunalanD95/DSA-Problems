@@ -21,8 +21,13 @@ def MergeSort(arr,l,r):
 
 
 
+
+
 if __name__ == '__main__':
     A = [5,2,3,1]
 
-    # A = [5,1,1,2,0,0]
     print("Merge-Sort",MergeSort(A,0,len(A)-1))  
+
+'''
+tc : o(log n)
+'''

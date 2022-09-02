@@ -32,6 +32,11 @@ def mergearray(arr,l,y,r):
     return arr
     
 
+'''
+tc : o(n)
+'''
+
+
 if __name__ == '__main__':
     A = [8,1,3,6,11,2,4,9,7,6]
     # merge two parts of array which are sorted 
