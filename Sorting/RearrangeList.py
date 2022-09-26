@@ -29,9 +29,10 @@ def Rearrange(arr,l,r):
     temp = arr[l]
     arr[l] = arr[i-1]
     arr[i-1] = temp 
-
+    print("arr",arr)
     return i-1
 
 if __name__ == '__main__':
     A = [10,3,8,15,6,12,2,18,7,1]
+    A = [2,1]
     print(Rearrange(A,0,len(A)-1))

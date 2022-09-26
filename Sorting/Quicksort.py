@@ -58,6 +58,7 @@ class QuickSort():
 if __name__ == '__main__':
     A = [4,75,43,13,32,99,2,1,0]
     # A = [ 1, 4, 10, 2, 1, 5 ]
+    A = [2,1]
 
 
     quick = QuickSort()
