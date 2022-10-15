@@ -9,6 +9,9 @@ Your task is to complete the function rev(), that reverses the N elements of the
 
 #Function to reverse the queue.
 import queue 
+
+from collections import deque
+
 def rev(q):
     #add code here
     stack = []

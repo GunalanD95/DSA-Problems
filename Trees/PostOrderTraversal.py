@@ -16,14 +16,18 @@ class BST:
  
         self.root = Node(val)
 
-def recpost(node):
-    if not node: return
-    
-    if node.left: recpost(node.left)
-        
-    if node.right: recpost(node.right)
-        
-    print("val",node.val)
+    def postorder(self,node):
+        if not node:
+            return 
+
+        if node.left:
+            self.postorder(node.left)
+
+        if node.right:
+            self.postorder(node.right)
+
+
+        print(node.val)
 
 
 
@@ -43,4 +47,4 @@ t.root.right.right = Node(6)
 # RECURSIVE POST ORDER TRAVERSAL
 # print(recpost(t.root))
 
-print("NODE PATH - BFS",nodepathans(t.root))
+print("NODE PATH - BFS",t.postorder(t.root))
