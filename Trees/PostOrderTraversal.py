@@ -47,4 +47,4 @@ t.root.right.right = Node(6)
 # RECURSIVE POST ORDER TRAVERSAL
 # print(recpost(t.root))
 
-print("NODE PATH - BFS",t.postorder(t.root))
+# print("NODE PATH - BFS",t.postorder(t.root))
