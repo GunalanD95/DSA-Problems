@@ -2,7 +2,6 @@
 Given the root node of a binary search tree and two integers low and high, 
 return the sum of values of all nodes with a value in the inclusive range [low, high].
 '''
-from collections import deque
 class Node:
 
     def __init__(self, val = None):
@@ -10,18 +9,33 @@ class Node:
         self.right = None
         self.val = val
 
+
+class TreeNode:
+
+    def __init__(self,min_node,max_node,max_size):
+        self.min_node  = min_node
+        self.max_node = max_node
+        self.max_size = max_size
+
 def LargestBST(root):
-    global ans 
-    ans = []
     def postord(node):
         if not node:
-            return
-        postord(node.left)
-        postord(node.right)
-        ans.append(node.val)
+            return TreeNode(float('inf'),float('-inf'),0)
         
-    postord(root)
-    print("ans",ans)
+        left = postord(node.left)
+        right = postord(node.right)
+
+        # if bst
+        if left.max_node < node.val and right.min_node > node.val:
+            return TreeNode(min(left.min_node,node.val),max(right.max_node,node.val)
+                            ,left.max_size + right.max_size + 1)
+
+
+        # if its not a BST then return 
+
+        return TreeNode(float('-inf'),float('inf'),max(left.max_size,right.max_size))
+
+    return postord(root).max_size
 
 
 
